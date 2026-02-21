@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Cairo", "Tajawal", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Tajawal", sans-serif;
+}
+
+:root {
+  --gold: #D4AF37;
+  --gold-light: #F1E5AC;
+  --gold-dark: #996515;
+  --black: #0A0A0A;
+  --black-light: #1A1A1A;
+}
+
+body {
+  background-color: var(--black);
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+}
+
+.gold-text {
+  color: var(--gold);
+  background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border {
+  border-color: var(--gold);
+}
+
+.gold-bg {
+  background-color: var(--gold);
+}
+
+.card-luxury {
+  background: var(--black-light);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+.card-luxury:hover {
+  border-color: var(--gold);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold-dark);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
