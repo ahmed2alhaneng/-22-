@@ -52,7 +52,8 @@ const DEFAULT_DATA = {
       duration: '4 أسابيع',
       description: 'تعلم صيانة الهواتف من الصفر حتى الاحتراف، تشمل الهاردوير والسوفتوير.',
       image: 'https://picsum.photos/seed/course1/800/600',
-      telegram: 'https://t.me/classic_phone_course'
+      telegram: 'https://t.me/classic_phone_course',
+      phone: '07700583840'
     }
   ],
   portfolio: [
@@ -61,7 +62,8 @@ const DEFAULT_DATA = {
       title: 'تبديل شاشة آيفون 13 برو ماكس',
       before: 'https://picsum.photos/seed/before1/400/400',
       after: 'https://picsum.photos/seed/after1/400/400',
-      date: '2024-02-20'
+      date: '2024-02-20',
+      phone: '07700583840'
     }
   ]
 };

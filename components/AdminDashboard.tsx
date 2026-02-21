@@ -276,7 +276,8 @@ const CoursesManager = ({ data, onSave }: any) => {
       duration: '',
       description: '',
       image: '',
-      telegram: ''
+      telegram: '',
+      phone: ''
     }]);
   };
 
@@ -351,14 +352,26 @@ const CoursesManager = ({ data, onSave }: any) => {
               </div>
             </div>
             
-            <div className="space-y-2">
-              <label className="text-sm text-gray-400">رابط التلكرام للتسجيل</label>
-              <input 
-                value={course.telegram} 
-                onChange={(e) => updateCourse(course.id, 'telegram', e.target.value)}
-                className="w-full bg-[#0A0A0A] border border-white/10 rounded-xl p-3 focus:border-[#D4AF37] outline-none transition-colors"
-                placeholder="https://t.me/..."
-              />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <label className="text-sm text-gray-400">رابط التلكرام للتسجيل</label>
+                <input 
+                  value={course.telegram} 
+                  onChange={(e) => updateCourse(course.id, 'telegram', e.target.value)}
+                  className="w-full bg-[#0A0A0A] border border-white/10 rounded-xl p-3 focus:border-[#D4AF37] outline-none transition-colors"
+                  placeholder="https://t.me/..."
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm text-gray-400">رقم الهاتف للتواصل</label>
+                <input 
+                  value={course.phone} 
+                  onChange={(e) => updateCourse(course.id, 'phone', e.target.value)}
+                  className="w-full bg-[#0A0A0A] border border-white/10 rounded-xl p-3 focus:border-[#D4AF37] outline-none transition-colors"
+                  placeholder="مثال: 07700000000"
+                  dir="ltr"
+                />
+              </div>
             </div>
 
             <div className="space-y-2">
@@ -398,7 +411,8 @@ const PortfolioManager = ({ data, onSave }: any) => {
       title: '',
       before: '',
       after: '',
-      date: new Date().toISOString().split('T')[0]
+      date: new Date().toISOString().split('T')[0],
+      phone: ''
     }]);
   };
 
@@ -432,6 +446,17 @@ const PortfolioManager = ({ data, onSave }: any) => {
                 onChange={(e) => updateItem(item.id, 'title', e.target.value)}
                 className="w-full bg-[#0A0A0A] border border-white/10 rounded-xl p-3 focus:border-[#D4AF37] outline-none transition-colors"
                 placeholder="مثال: تبديل شاشة آيفون 14"
+              />
+            </div>
+
+            <div className="space-y-2">
+              <label className="text-sm text-gray-400">رقم الهاتف للتواصل</label>
+              <input 
+                value={item.phone} 
+                onChange={(e) => updateItem(item.id, 'phone', e.target.value)}
+                className="w-full bg-[#0A0A0A] border border-white/10 rounded-xl p-3 focus:border-[#D4AF37] outline-none transition-colors"
+                placeholder="مثال: 07700000000"
+                dir="ltr"
               />
             </div>
             

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle2, ArrowLeftRight } from 'lucide-react';
+import { CheckCircle2, ArrowLeftRight, Phone } from 'lucide-react';
 
 interface PortfolioItem {
   id: number;
@@ -9,6 +9,7 @@ interface PortfolioItem {
   before: string;
   after: string;
   date: string;
+  phone?: string;
 }
 
 interface PortfolioProps {
@@ -84,9 +85,20 @@ const Portfolio: React.FC<PortfolioProps> = ({ items }) => {
                 </div>
               </div>
 
-              <div className="flex items-center gap-2 text-sm text-gray-400 bg-white/5 p-3 rounded-lg">
-                <CheckCircle2 className="text-[#D4AF37] w-4 h-4" />
-                <span>تمت الصيانة بنجاح باستخدام قطع غيار أصلية</span>
+              <div className="flex items-center justify-between gap-2 text-sm text-gray-400 bg-white/5 p-3 rounded-lg">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="text-[#D4AF37] w-4 h-4" />
+                  <span>تمت الصيانة بنجاح</span>
+                </div>
+                {item.phone && (
+                  <a 
+                    href={`tel:${item.phone}`}
+                    className="flex items-center gap-1 text-[#D4AF37] hover:underline"
+                  >
+                    <Phone size={14} />
+                    <span dir="ltr">{item.phone}</span>
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}

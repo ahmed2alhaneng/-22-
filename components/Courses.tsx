@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen, Clock, DollarSign, Send, CheckCircle2 } from 'lucide-react';
+import { BookOpen, Clock, DollarSign, Send, CheckCircle2, Phone } from 'lucide-react';
 
 interface Course {
   id: number;
@@ -12,6 +12,7 @@ interface Course {
   description: string;
   image: string;
   telegram: string;
+  phone?: string;
 }
 
 interface CoursesProps {
@@ -83,14 +84,26 @@ const Courses: React.FC<CoursesProps> = ({ courses }) => {
                     <span className="text-gray-500 line-through text-xs">${course.price}</span>
                     <span className="text-2xl font-bold text-[#D4AF37]">${course.discount}</span>
                   </div>
-                  <a 
-                    href={course.telegram} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="bg-[#D4AF37] hover:bg-[#B38728] text-black p-3 rounded-full transition-all hover:scale-110"
-                  >
-                    <Send size={20} />
-                  </a>
+                  <div className="flex gap-2">
+                    {course.phone && (
+                      <a 
+                        href={`tel:${course.phone}`}
+                        className="bg-white/5 hover:bg-white/10 text-[#D4AF37] p-3 rounded-full transition-all hover:scale-110 border border-white/10"
+                        title="اتصال"
+                      >
+                        <Phone size={20} />
+                      </a>
+                    )}
+                    <a 
+                      href={course.telegram} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="bg-[#D4AF37] hover:bg-[#B38728] text-black p-3 rounded-full transition-all hover:scale-110"
+                      title="تلكرام"
+                    >
+                      <Send size={20} />
+                    </a>
+                  </div>
                 </div>
               </div>
             </motion.div>
